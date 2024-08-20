@@ -97,16 +97,6 @@ const education = {
       position: "SSC (10th)",
       duration: "2015 - 2016",
     },
-    {
-      institution: "Mar Thoma School, Maharashtra(Mumabi, In)",
-      position: "SSC (10th)",
-      duration: "2015 - 2016",
-    },
-    {
-      institution: "Mar Thoma School, Maharashtra(Mumabi, In)",
-      position: "SSC (10th)",
-      duration: "2015 - 2016",
-    },
   ],
 };
 

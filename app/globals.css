@@ -24,4 +24,21 @@
     .text-outline-hover {
         -webkit-text-stroke: 1px #00ff99;
     }
+    @screen sm {
+        ul {
+            @apply flex-wrap justify-center m-0 p-0;
+        }
+
+        li {
+            @apply mb-2;
+        }
+
+        .container {
+            @apply pb-0;
+        }
+
+        .flex-col {
+            @apply mb-0;
+        }
+    }
 }

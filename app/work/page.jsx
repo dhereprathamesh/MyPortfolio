@@ -5,6 +5,7 @@ import React, { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 
 import {
@@ -21,7 +22,7 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "Full Stack Project",
+    category: "Full Stack",
     title: "E-Commerce Platform with Admin Panel",
     description:
       "An e-commerce platform with an admin panel, featuring React.js, Node.js, Express.js, MongoDB, and integrated payment with Stripe.",
@@ -37,7 +38,7 @@ const projects = [
   },
   {
     num: "02",
-    category: "Full Stack Project",
+    category: "Full Stack",
     title: "Real-Time MERN Chat Application",
     description:
       "Real-time chat application using React.js, Node.js, Express.js, MongoDB, and Socket.io for dynamic messaging and user interaction.",
@@ -60,7 +61,7 @@ const projects = [
   },
   {
     num: "03",
-    category: "Full Stack Project",
+    category: "Full Stack",
     title: "Real Estate Platform",
     description:
       "Real estate platform with React.js, Node.js, Express.js, MongoDB, and Socket.io for real-time updates and seamless user experience",
@@ -103,7 +104,7 @@ const Work = () => {
       }}
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
@@ -113,7 +114,7 @@ const Work = () => {
               </div>
               {/* project category */}
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
+                {project.category}
               </h2>
 
               {/* project description */}
@@ -121,7 +122,7 @@ const Work = () => {
 
               {/* stack */}
               <div>
-                <ul className="flex gap-4">
+                <ul className="flex gap-4 flex-wrap justify-start m-0 p-0">
                   {project.stack.map((item, index) => (
                     <li key={index} className="text-xl text-accent">
                       {item.name}
@@ -173,7 +174,7 @@ const Work = () => {
             >
               {projects.map((project, index) => {
                 return (
-                  <SwiperSlide key={index} className="w-full">
+                  <SwiperSlide key={index} className="w-full h-full">
                     <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
                       {/* overlay */}
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
@@ -204,3 +205,72 @@ const Work = () => {
 };
 
 export default Work;
+
+// const Work = () => {
+//   const [project, setProject] = useState(projects[0]);
+//   return (
+//     <motion.section
+//       initial={{ opacity: 0 }}
+//       animate={{
+//         opacity: 1,
+//         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+//       }}
+//       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+//     >
+//       <div className="container mx-auto">
+//         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
+//           <div className="w-full xl:w-[100%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
+//             {/* Outline Num */}
+//             <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+//               {project.num}
+//             </div>
+
+//             {/* Project category */}
+//             <h2 className="text-[42px] font-bold leading-none text-white grroup-hover:-text-accent transition-all duration-500 capitalize">
+//               {project.category} Project
+//             </h2>
+
+//             {/* project Description */}
+//             <p className="text-white/60">{project.description}</p>
+
+//             {/* Project Skills */}
+//             {/* Stack */}
+//             <ul className="flex gap-4 flex-wrap justify-start m-0 p-0">
+//               {project.stack.map((item, index) => {
+//                 return (
+//                   <li key={index} className="text-xl text-accent">
+//                     {item.name}
+
+//                     {index !== project.stack.length - 1 && ","}
+//                   </li>
+//                 );
+//               })}
+//             </ul>
+
+//             {/* border */}
+//             <div className="border border-white/20"></div>
+
+//             {/* buttons */}
+//             <div>
+//               <Link href={project.live}>
+//                 <TooltipProvider>
+//                   <Tooltip>
+//                     <TooltipTrigger>
+//                       <BsArrowUpRight />
+//                     </TooltipTrigger>
+//                     <TooltipContent>
+//                       <p>Live project</p>
+//                     </TooltipContent>
+//                   </Tooltip>
+//                 </TooltipProvider>
+//               </Link>
+//             </div>
+//           </div>
+//           <div className="w-full xl:w-[100%]">Slider</div>
+//         </div>
+//       </div>
+//     </motion.section>
+//   );
+// };
+
+// export default Work;
